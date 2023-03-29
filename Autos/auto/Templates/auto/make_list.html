@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Autos List</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+		}
+		h1 {
+			color: #333;
+			text-align: center;
+			margin-top: 30px;
+		}
+		ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			font-size: 16px;
+			font-weight: bold;
+			color: #333;
+			text-align: center;
+			margin-top: 50px;
+		}
+		li {
+			margin: 10px 0;
+			background-color: #fff;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+		}
+		a {
+			color: #333;
+			text-decoration: none;
+			margin-right: 10px;
+		}
+		a:hover {
+			color: #fff;
+			background-color: #333;
+		}
+		.add-btn {
+			display: block;
+			text-align: center;
+			margin-top: 20px;
+		}
+		.back-btn {
+			display: block;
+			text-align: center;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Makes List</h1>
+	<ul>
+		{% for make in make_list %}
+			<li>{{make.auto}} (<a href="{% url 'update' make.pk %}">Update</a> | <a href=" {% url 'delete' make.pk %} ">Delete</a>)</li>
+		{% endfor %}
+	</ul>
+	<div class="add-btn">
+		<a href="{% url 'create' %}">Add a make</a>
+	</div>
+	<div class="back-btn">
+		<a href="{% url 'autos' %}">Back to autos</a>
+	</div>
+</body>
+</html>

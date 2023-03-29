@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Autos</title>
+
+<style>
+	/* Set font family and size for the entire page */
+body {
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+}
+
+/* Style the heading */
+h1 {
+	color: #007bff;
+}
+
+/* Style the paragraph */
+p {
+	margin-bottom: 20px;
+}
+
+/* Style the unordered list */
+ul {
+	list-style: none;
+	padding: 0;
+	margin-bottom: 20px;
+}
+
+/* Style the list items */
+li {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+/* Style the links in the list items */
+li a {
+	color: #007bff;
+	text-decoration: none;
+}
+
+/* Style the link for logout */
+a[href*="logout"] {
+	color: red;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>DJ4E Sample Implementations</h1>
+
+<p>This is coming from a file in auto/templates/main.html</p>
+
+
+
+<ul>
+        <li><a href="{% url 'autos' %}">Autos Crud</a></li>
+ 	    <li><a href="">Cats Crud</a></li>    
+ </ul>
+
+<a href="{% url 'logout' %}">Logout</a>
+
+
+
+ 
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CRUD</title>
+</head>
+<style >
+	/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Typography */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+/* Layout */
+header {
+  background-color: #eee;
+  padding: 1em;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 1em;
+}
+
+nav ul li a {
+  color: #333;
+  text-decoration: none;
+  padding: 0.5em;
+  border-radius: 0.25em;
+  transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 1em;
+  text-align: center;
+}
+
+</style>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a href="{% url 'login' %}">Log In</a></li>
+				<li><a href="{% url 'register' %}">Sign Up</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<h1>Hello World</h1>
+		<p>This is coming from a file in auto/templates/main.html</p>
+	</main>
+
+	<footer>
+		<p>&copy; 2023 DJ4E Sample Implementations</p>
+	</footer>
+</body>
+</html>
