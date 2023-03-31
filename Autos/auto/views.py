@@ -28,14 +28,17 @@ def registerpage(request):
 	return render(request, 'auto/register.html', context)
 
 def login_view(request):
-	if request.method == 'POST':
-		username = request.POST.get('username')
-		password = request.POST.get('password')
-		user = authenticate(request, username = username, password = password)
-		login(request, user)
-		return redirect('home')
-	return render(request, 'auto/login.html')#context)
-
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(request, username=username, password=password)
+        if user is not None and user.is_authenticated:
+            login(request, user)
+            return redirect('home')
+        else:
+            messages.error(request, 'Invalid username or password.')
+    
+    return render(request, 'login.html')
 
 def logoutUser(request):
 	logout(request)
