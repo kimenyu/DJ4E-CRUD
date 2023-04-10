@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Breed List</title>
+</head>
+<body>
+<h1>Breeds List</h1>
+<ul>
+	
+	{% for mybreed in Breed_list %}
+	<li>{{ mybreed.name }}	<a href="{% url 'updating'  mybreed.pk %}">Update</a> | <a href="{%  url 'deleting' mybreed.pk %}">Delete</a></li>
+	{% endfor %}
+</ul>
+<a href="{%url 'create'%}">Add a breed</a>
+<a href="{%url 'index'%}">Back to cats</a>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cats CRUD</title>
+</head>
+<body>
+    <h1>Cats List</h1>
+    
+    {% for cat in cat_list %}
+    <ul>
+        <li>{{ cat.nickname }} ({{ cat.breed.name }})
+            (<a href="{% url 'cat_update' cat.pk %}">Update</a> |
+            <a href="{% url 'cat_delete' cat.pk %}">Delete</a>)
+        </li>
+    </ul>
+    {% endfor %}
+    
+
+    <a href="{% url 'catscreate' %}">Add a cat</a>
+    <div>
+        <a href="{% url 'breedView' %}">View breeds</a> |
+        <a href="{% url 'create' %}">Add a breed</a> |
+        <a href="/auto/home/">Go Home</a>
+    </div>
+</body>
+</html>

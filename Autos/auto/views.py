@@ -38,7 +38,7 @@ def login_view(request):
         else:
             messages.error(request, 'Invalid username or password.')
     
-    return render(request, 'login.html')
+    return render(request, 'auto/login.html')
 
 def logoutUser(request):
 	logout(request)
@@ -61,7 +61,7 @@ def list_makes(request):
 
 class MakeListView(ListView):
 	model = Make
-	context_object_name = 'make_list'
+	context_object_name = 'make_list'#This sets the name of the variable that will be used in the template to access the list of objects retrieved from the model.
 	def get_context_data(self, **kwargs):
 		context = super().get_context_data(**kwargs)
 		return context
