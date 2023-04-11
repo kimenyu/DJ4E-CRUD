@@ -7,17 +7,15 @@
 </head>
 <body>
     <h1>Cats List</h1>
-    
-    {% for cat in cat_list %}
     <ul>
-        <li>{{ cat.nickname }} ({{ cat.breed.name }})
-            (<a href="{% url 'cat_update' cat.pk %}">Update</a> |
-            <a href="{% url 'cat_delete' cat.pk %}">Delete</a>)
+        {% for cats in object_list %}
+        <li>{{cats.nickname}} ({{cats.breed.name}})
+            <a href="{% url '' %}">(update</a> |
+            <a href="">Delete)</a>
         </li>
+        {% endfor  %}
     </ul>
-    {% endfor %}
     
-
     <a href="{% url 'catscreate' %}">Add a cat</a>
     <div>
         <a href="{% url 'breedView' %}">View breeds</a> |

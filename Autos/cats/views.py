@@ -7,9 +7,10 @@ from django.urls import reverse_lazy
 # Create your views here.
 
 
-def index(request):
-	return render(request, 'cats/cat_list.html')
-
+class CatListView(ListView):
+	model=Cat
+	template_name='cats/cat_list.html'
+	
 class BreedCreateView(CreateView):
 	model = Breed
 	fields = '__all__'
