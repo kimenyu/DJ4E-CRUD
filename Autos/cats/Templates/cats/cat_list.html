@@ -10,8 +10,8 @@
     <ul>
         {% for cats in cat_list %}
         <li>{{cats.nickname}} ({{cats.breed.name}})
-            <a href="{% url 'cat_update' pk=cats.pk%}">(update</a> |
-            <a href="{% url 'cat_delete' pk=cats.pk%}">Delete)</a>
+            <a href="{% url 'cat_update' cats.pk%}">(update</a> |
+            <a href="{% url 'cat_delete' cats.pk%}">Delete)</a>
         </li>
         {% endfor  %}
     </ul>
